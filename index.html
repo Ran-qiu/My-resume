@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>焦睿锜 - 个人简历</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-gray: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-gray);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--white);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-gray);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        /* Summary */
+        .summary p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .summary li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .skill-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: var(--text-dark);
+        }
+
+        /* Experience Table */
+        .exp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .exp-table th, .exp-table td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .exp-table th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+
+        /* Projects */
+        .project-item {
+            margin-bottom: 30px;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .company-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .job-title {
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .project-date {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .project-desc {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .project-name {
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 5px;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            header {
+                padding: 20px;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .project-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>焦睿锜 (Jiao Ruiqi)</h1>
+            <div class="subtitle">大模型应用工程师 | 高级Python后端工程师</div>
+            <div class="contact-info">
+                <span class="contact-item">📧 Ranqiu_0614@126.com</span>
+                <span class="contact-item">📱 19946224702</span>
+                <span class="contact-item">📍 郑州</span>
+                <span class="contact-item">🎓 山西应用科技学院 (2017-2021)</span>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section class="summary">
+                <h2>个人总结</h2>
+                <p>资深AI应用架构师，拥有5年全栈AI落地经验，专注于<strong>大模型(LLM)</strong>与<strong>NLP</strong>技术在教育及企业服务领域的深度应用。具备“<strong>算法研究+工程落地+产品架构</strong>”的完整闭环能力。</p>
+                <ul>
+                    <li><strong>架构与工程</strong>：精通RAG系统设计与Agentic Workflow编排，主导过高并发智能文档处理平台与垂直领域知识问答系统的架构设计。</li>
+                    <li><strong>算法与微调</strong>：深耕NLP领域，精通SFT/LoRA/QLoRA微调技术，擅长解决模型在特定垂直领域的幻觉与精度问题。</li>
+                    <li><strong>多模态与文档智能</strong>：在OCR、PDF解析及多模态内容理解方面有丰富实战经验。</li>
+                    <li><strong>业务价值</strong>：致力于通过前沿AI技术解决实际业务痛点，推动企业数字化与智能化转型。</li>
+                </ul>
+            </section>
+
+            <section class="skills">
+                <h2>技术栈</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <span class="skill-title">大模型工程 (LLM Ops)</span>
+                        RAG架构, Agent编排 (Dify/Coze), Prompt Engineering, Ollama
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-title">后端架构 & 数据库</span>
+                        Python (FastAPI/Flask), MongoDB, Redis, MySQL
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-title">前端与可视化</span>
+                        React/Vue, ECharts, Ant Design, WebSocket, 实时监控
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-title">深度学习 & NLP</span>
+                        PyTorch, BERT, T5, NER, 知识图谱 (Neo4j)
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-title">文档智能</span>
+                        PaddleOCR, MinerU, OpenCV, 版面分析
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-title">DevOps</span>
+                        Docker, Kubernetes, Prometheus, CI/CD
+                    </div>
+                </div>
+            </section>
+
+            <section class="experience-list">
+                <h2>工作经历</h2>
+                <table class="exp-table">
+                    <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>任职单位</th>
+                            <th>职位</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2025.04 - 至今</td>
+                            <td>北京海西青科技有限责任公司（爱云校）</td>
+                            <td>大模型应用/算法工程师</td>
+                        </tr>
+                        <tr>
+                            <td>2024.07 - 2025.02</td>
+                            <td>星群(北京)科技发展有限公司</td>
+                            <td>大模型算法工程师</td>
+                        </tr>
+                        <tr>
+                            <td>2021.08 - 2024.06</td>
+                            <td>北京三海教育科技有限公司</td>
+                            <td>NLP算法工程师</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="projects">
+                <h2>项目经历</h2>
+                
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="company-name">北京海西青科技有限责任公司</span>
+                        <span class="job-title">大模型应用/算法工程师</span>
+                        <span class="project-date">2025.04 - 至今</span>
+                    </div>
+                    <div class="project-desc">
+                        <span class="project-name">Electronic - 智能教育文档处理平台</span>
+                        <p>针对教育场景非结构化数据的通用解析平台，支持多模态输入与标准化输出。</p>
+                        <ul>
+                            <li><strong>架构设计</strong>：基于 FastAPI 设计高并发微服务架构，采用 MongoDB + Redis 实现异步任务队列。</li>
+                            <li><strong>多模态解析</strong>：集成 MinerU 与 PaddleOCR 解决复杂版面分析；自定义解析器处理 WMF 矢量图与 LaTeX 公式。</li>
+                            <li><strong>AI Agent集成</strong>：引入 Dify 工作流编排 LLM，实现复杂题型的语义拆分与结构化提取。</li>
+                            <li><strong>全栈监控与可视化</strong>：基于 React + ECharts 构建实时仪表盘，通过 WebSocket 追踪任务状态，集成 Badcase 管理。</li>
+                            <li><strong>工程化</strong>：Docker 容器化封装与 Prometheus 监控配置。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="company-name">星群(北京)科技发展有限公司</span>
+                        <span class="job-title">大模型算法工程师</span>
+                        <span class="project-date">2024.07 - 2025.02</span>
+                    </div>
+                    <div class="project-desc">
+                        <span class="project-name">智能客服大模型应用 (服务海工院)</span>
+                        <ul>
+                            <li><strong>大模型微调</strong>：负责 ChatGLM3-6B 等模型的选型与 LoRA/QLoRA 微调。</li>
+                            <li><strong>系统集成</strong>：主导对话管理、意图识别及 RAG 系统集成，提供精确问答服务。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="company-name">北京三海教育科技有限公司</span>
+                        <span class="job-title">NLP算法工程师</span>
+                        <span class="project-date">2021.08 - 2024.06</span>
+                    </div>
+                    <div class="project-desc">
+                        <span class="project-name">数字人应用 & 智能文章审阅</span>
+                        <ul>
+                            <li><strong>数字人</strong>：利用 Linly-Talker 实现面部驱动，结合 Stable Diffusion 优化视觉形象。</li>
+                            <li><strong>文本纠错</strong>：基于 T5 模型研发纠错算法，F1值达到 94.6%。</li>
+                            <li><strong>知识图谱</strong>：采用 BERT+BiLSTM+CRF 训练 NER 模型，构建 K12 学科知识图谱。</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+</body>
+</html>

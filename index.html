@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>焦睿锜 - 个人简历</title>
+    <meta name="description" content="焦睿锜的个人简历，专注于大模型应用与Python后端开发，包含工作经历、个人项目和技术栈。">
     <style>
         :root {
             --primary-color: #2563eb;
@@ -66,6 +67,17 @@
             display: flex;
             align-items: center;
             gap: 5px;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
         }
 
         /* Main Content */
@@ -204,22 +216,145 @@
             color: var(--text-light);
         }
 
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: var(--primary-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: none;
+            font-size: 1.5rem;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #1e40af;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
         @media (max-width: 768px) {
             .container {
                 margin: 0;
                 border-radius: 0;
             }
-            
+
             header {
                 padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+                font-size: 0.85rem;
             }
 
             .main-content {
                 padding: 20px;
             }
 
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .exp-table {
+                font-size: 0.85rem;
+            }
+
+            .exp-table th, .exp-table td {
+                padding: 8px;
+            }
+
             .project-header {
                 flex-direction: column;
+            }
+
+            .company-name {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background-color: var(--white);
+            }
+
+            .container {
+                max-width: 100%;
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            header {
+                background: var(--white);
+                color: var(--text-dark);
+                border-bottom: 2px solid var(--primary-color);
+            }
+
+            h1 {
+                color: var(--primary-color);
+            }
+
+            .subtitle {
+                color: var(--text-dark);
+            }
+
+            .contact-info {
+                color: var(--text-dark);
+            }
+
+            .back-to-top {
+                display: none !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+
+            .project-item {
+                page-break-inside: avoid;
+            }
+
+            a {
+                color: var(--text-dark);
+                text-decoration: none;
+            }
+
+            a[href]:after {
+                content: " (" attr(href) ")";
+                font-size: 0.8em;
+                color: var(--text-light);
             }
         }
     </style>
@@ -228,9 +363,9 @@
     <div class="container">
         <header>
             <h1>焦睿锜 (Jiao Ruiqi)</h1>
-            <div class="subtitle">大模型应用工程师 | 高级Python后端工程师</div>
+            <div class="subtitle">大模型应用工程师 | NLP算法工程师</div>
             <div class="contact-info">
-                <span class="contact-item">📧 Ranqiu_0614@126.com</span>
+                <span class="contact-item">📫 Ranqiu_0614@126.com</span>
                 <span class="contact-item">📱 19946224702</span>
                 <span class="contact-item">📍 郑州</span>
             </div>
@@ -239,12 +374,11 @@
         <div class="main-content">
             <section class="summary">
                 <h2>个人总结</h2>
-                <p>资深AI应用架构师，拥有5年全栈AI落地经验，专注于<strong>大模型(LLM)</strong>与<strong>NLP</strong>技术在教育及企业服务领域的深度应用。具备“<strong>算法研究+工程落地+产品架构</strong>”的完整闭环能力。</p>
+                <p>资深AI应用架构师，拥有5年AI工程化经验，专注于<strong>大模型(LLM)</strong>与<strong>NLP</strong>在教育及企业服务的深度应用。具备"<strong>算法研究+工程落地+产品架构</strong>"的完整闭环能力。</p>
                 <ul>
-                    <li><strong>架构与工程</strong>：精通RAG系统设计与Agentic Workflow编排，主导过高并发智能文档处理平台与垂直领域知识问答系统的架构设计。</li>
-                    <li><strong>算法与微调</strong>：深耕NLP领域，精通SFT/LoRA/QLoRA微调技术，擅长解决模型在特定垂直领域的幻觉与精度问题。</li>
-                    <li><strong>多模态与文档智能</strong>：在OCR、PDF解析及多模态内容理解方面有丰富实战经验。</li>
-                    <li><strong>业务价值</strong>：致力于通过前沿AI技术解决实际业务痛点，推动企业数字化与智能化转型。</li>
+                    <li><strong>大模型工程</strong>：精通RAG系统设计、Workflow编排及SFT/LoRA/QLoRA微调技术，主导过高并发智能文档处理平台与垂直领域问答系统的架构设计。</li>
+                    <li><strong>文档智能</strong>：在OCR、PDF解析、多模态内容理解及复杂版面分析方面有丰富实战经验，解决教育场景非结构化数据处理难题。</li>
+                    <li><strong>全栈能力</strong>：熟悉前后端开发、容器化部署及系统监控，能够独立交付完整AI产品，致力于用技术解决业务痛点。</li>
                 </ul>
             </section>
 
@@ -253,15 +387,15 @@
                 <div class="skills-grid">
                     <div class="skill-card">
                         <span class="skill-title">大模型工程 (LLM Ops)</span>
-                        RAG架构, Agent编排 (Dify/Coze), Prompt Engineering, Ollama
+                        RAG架构, Agent编排 (Dify/Coze), Google Gemini API, Prompt Engineering, Ollama
                     </div>
                     <div class="skill-card">
                         <span class="skill-title">后端架构 & 数据库</span>
-                        Python (FastAPI/Flask), MongoDB, Redis, MySQL
+                        Python (FastAPI/Flask), Supabase, MongoDB, Redis, MySQL
                     </div>
                     <div class="skill-card">
                         <span class="skill-title">前端与可视化</span>
-                        React/Vue, ECharts, Ant Design, WebSocket, 实时监控
+                        React 19, D3.js, ECharts, Tailwind CSS, WebSocket
                     </div>
                     <div class="skill-card">
                         <span class="skill-title">深度学习 & NLP</span>
@@ -276,6 +410,28 @@
                         Docker, Kubernetes, Prometheus, CI/CD
                     </div>
                 </div>
+            </section>
+
+            <section class="education-list">
+                <h2>教育背景</h2>
+                <table class="exp-table">
+                    <thead>
+                        <tr>
+                            <th>时间</th>
+                            <th>学校</th>
+                            <th>专业</th>
+                            <th>学历</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2017.09 - 2021.06</td>
+                            <td>山西应用科技学院</td>
+                            <td>计算机科学与技术</td>
+                            <td>本科</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
             <section class="experience-list">
@@ -322,7 +478,7 @@
                         <p>针对教育场景非结构化数据的通用解析平台，支持多模态输入与标准化输出。</p>
                         <ul>
                             <li><strong>架构设计</strong>：基于 FastAPI 设计高并发微服务架构，采用 MongoDB + Redis 实现异步任务队列。</li>
-                            <li><strong>多模态解析</strong>：集成 MinerU 与 PaddleOCR 解决复杂版面分析；自定义解析器处理 WMF 矢量图与 LaTeX 公式。</li>
+                            <li><strong>多模态解析</strong>：集成 MinerU 与 PaddleOCR 解决复杂版面分析；自定义解析器处理Word文档，解决 WMF 矢量图与 LaTeX 公式。</li>
                             <li><strong>AI Agent集成</strong>：引入 Dify 工作流编排 LLM，实现复杂题型的语义拆分与结构化提取。</li>
                             <li><strong>全栈监控与可视化</strong>：基于 React + ECharts 构建实时仪表盘，通过 WebSocket 追踪任务状态，集成 Badcase 管理。</li>
                             <li><strong>工程化</strong>：Docker 容器化封装与 Prometheus 监控配置。</li>
@@ -362,7 +518,67 @@
                 </div>
 
             </section>
+
+            <section class="personal-projects">
+                <h2>个人项目</h2>
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="company-name">MindMap AI - 个人知识图谱学习平台</span>
+                        <span class="project-date">2024.12 - 至今</span>
+                    </div>
+                    <div class="project-desc">
+                        <span class="project-name">基于大模型的交互式深度学习工具</span>
+                        <p>一个旨在帮助用户快速研究新领域的现代化学习工具。利用AI技术将分散的网络信息转化为结构化的知识图谱，支持从单一概念出发的无尽知识探索。</p>
+                        <ul>
+                            <li><strong>全栈架构</strong>：采用 React 19 + TypeScript + Tailwind CSS 构建现代化前端，Supabase 提供后端 BaaS 服务（Auth & Database）。</li>
+                            <li><strong>AI 核心集成</strong>：实现了 "Bring Your Own Model" 架构，原生支持 Google Gemini (具备 Search Grounding 能力) 及所有 OpenAI 兼容接口模型。</li>
+                            <li><strong>可视化交互</strong>：基于 D3.js 开发动态知识图谱，实现节点单击高亮（上下文联动）与双击下钻（Deep Dive，自动扩展搜索并动态更新图谱）。</li>
+                            <li><strong>数据策略</strong>：设计了"本地优先"的数据存储策略，支持纯本地浏览器存储与云端同步的无缝切换。</li>
+                            <li><strong>技术亮点</strong>：Markdown 实时渲染、多主题切换、递归式知识搜索算法。</li>
+                            <li><a href="https://github.com/Ran-qiu/Learing-Ai" target="_blank">GitHub 仓库</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="返回顶部">
+        ↑
+    </button>
+
+    <script>
+        // Back to Top functionality
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll for all internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

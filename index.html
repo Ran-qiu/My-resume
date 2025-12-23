@@ -80,6 +80,67 @@
             text-decoration: underline;
         }
 
+        /* Table of Contents (Right Nav) */
+        .toc-nav {
+            position: fixed;
+            top: 140px;
+            right: 24px;
+            width: 220px;
+            max-height: calc(100vh - 180px);
+            overflow: auto;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--bg-gray);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 14px 14px 10px;
+            z-index: 999;
+        }
+
+        .toc-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin: 6px 0;
+        }
+
+        .toc-list a {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-decoration: none;
+            line-height: 1.4;
+            padding: 4px 6px;
+            border-radius: 6px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .toc-list a:hover {
+            background: var(--bg-gray);
+            color: var(--text-dark);
+        }
+
+        .toc-list a.active {
+            background: rgba(37, 99, 235, 0.12);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        @media (max-width: 1300px) {
+            .toc-nav {
+                display: none;
+            }
+        }
+
         /* Main Content */
         .main-content {
             padding: 40px;
@@ -338,6 +399,10 @@
                 display: none !important;
             }
 
+            .toc-nav {
+                display: none !important;
+            }
+
             section {
                 page-break-inside: avoid;
             }
@@ -365,24 +430,28 @@
             <h1>焦睿锜 (Jiao Ruiqi)</h1>
             <div class="subtitle">大模型应用工程师 | NLP算法工程师</div>
             <div class="contact-info">
-                <span class="contact-item">📫 Ranqiu_0614@126.com</span>
-                <span class="contact-item">📱 19946224702</span>
-                <span class="contact-item">📍 郑州</span>
+                <span class="contact-item">邮箱：<a href="mailto:Ranqiu_0614@126.com">Ranqiu_0614@126.com</a></span>
+                <span class="contact-item">电话：<a href="tel:+8619946224702">19946224702</a></span>
+                <span class="contact-item">地点：郑州</span>
+                <span class="contact-item">GitHub：<a href="https://github.com/Ran-qiu" target="_blank" rel="noopener noreferrer">github.com/Ran-qiu</a></span>
             </div>
         </header>
 
         <div class="main-content">
-            <section class="summary">
+            <section class="summary" id="summary">
                 <h2>个人总结</h2>
-                <p>资深AI应用架构师，拥有5年AI工程化经验，专注于<strong>大模型(LLM)</strong>与<strong>NLP</strong>在教育及企业服务的深度应用。具备"<strong>算法研究+工程落地+产品架构</strong>"的完整闭环能力。</p>
+                <p>大模型应用工程师，拥有4年+ AI/NLP 工程化经验，专注于<strong>大模型(LLM)</strong>应用落地、<strong>Python后端</strong>服务化、<strong>系统监控</strong>可视化。具备从需求拆解、架构设计、工程实现到部署交付的完整闭环能力。</p>
                 <ul>
                     <li><strong>大模型工程</strong>：精通RAG系统设计、Workflow编排及SFT/LoRA/QLoRA微调技术，主导过高并发智能文档处理平台与垂直领域问答系统的架构设计。</li>
                     <li><strong>文档智能</strong>：在OCR、PDF解析、多模态内容理解及复杂版面分析方面有丰富实战经验，解决教育场景非结构化数据处理难题。</li>
+                    <li><strong>LLM 平台化</strong>：支持 Ollama / OpenAI 兼容接口 / 自定义网关的统一接入，覆盖多模型切换、流式对话与本地持久化（SQLite）。</li>
                     <li><strong>全栈能力</strong>：熟悉前后端开发、容器化部署及系统监控，能够独立交付完整AI产品，致力于用技术解决业务痛点。</li>
+                    <li><strong>全栈交付</strong>：FastAPI + SQLAlchemy + React/TypeScript，配套 Docker Compose 一键部署，能独立交付可用、可部署的 AI Web 产品。</li>
+                    <li><strong>文档智能</strong>：在 OCR、PDF 解析、多模态内容理解及复杂版面分析方面有实战经验，擅长非结构化数据处理与质量评估。</li>
                 </ul>
             </section>
 
-            <section class="skills">
+            <section class="skills" id="skills">
                 <h2>技术栈</h2>
                 <div class="skills-grid">
                     <div class="skill-card">
@@ -412,7 +481,7 @@
                 </div>
             </section>
 
-            <section class="education-list">
+            <section class="education-list" id="education">
                 <h2>教育背景</h2>
                 <table class="exp-table">
                     <thead>
@@ -434,7 +503,7 @@
                 </table>
             </section>
 
-            <section class="experience-list">
+            <section class="experience-list" id="experience">
                 <h2>工作经历</h2>
                 <table class="exp-table">
                     <thead>
@@ -464,7 +533,7 @@
                 </table>
             </section>
 
-            <section class="projects">
+            <section class="projects" id="projects">
                 <h2>项目经历</h2>
                 
                 <div class="project-item">
@@ -519,7 +588,7 @@
 
             </section>
 
-            <section class="personal-projects">
+            <section class="personal-projects" id="personal-projects">
                 <h2>个人项目</h2>
                 <div class="project-item">
                     <div class="project-header">
@@ -535,13 +604,35 @@
                             <li><strong>可视化交互</strong>：基于 D3.js 开发动态知识图谱，实现节点单击高亮（上下文联动）与双击下钻（Deep Dive，自动扩展搜索并动态更新图谱）。</li>
                             <li><strong>数据策略</strong>：设计了"本地优先"的数据存储策略，支持纯本地浏览器存储与云端同步的无缝切换。</li>
                             <li><strong>技术亮点</strong>：Markdown 实时渲染、多主题切换、递归式知识搜索算法。</li>
-                            <li><a href="https://github.com/Ran-qiu/Learing-Ai" target="_blank">GitHub 仓库</a></li>
+                            <li><a href="https://github.com/Ran-qiu/Learing-Ai" target="_blank" rel="noopener noreferrer">GitHub: Ran-qiu/Learing-Ai</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="company-name">LLM 统一管理平台</span>
+                        <span class="project-date">2025.12 - 至今</span>
+                    </div>
+                    <div class="project-desc">
+                        <span class="project-name">本地/云端多模型统一接入与管理控制台</span>
+                        <p>面向本地化部署场景的 LLM 统一管理平台：支持 Ollama、本地 OpenAI 兼容服务与云端主流模型的统一接入，并提供可视化配置与对话调试能力。</p>
+                        <ul>
+                            <li><strong>后端服务化</strong>：Python + FastAPI + SQLAlchemy，配置与对话记录本地存储（SQLite），支持流式对话。</li>
+                            <li><strong>网关适配</strong>：内置网关/适配器模式，统一接入 Ollama、vLLM/LocalAI 等 OpenAI-Compatible 服务及 OpenAI/Claude/Gemini。</li>
+                            <li><strong>前端控制台</strong>：React 18 + TypeScript + Vite + Ant Design，提供模型切换、参数配置与会话管理界面。</li>
+                            <li><strong>部署交付</strong>：Docker + Docker Compose 一键部署，支持前后端与 Ollama 组合运行。</li>
+                            <li><a href="https://github.com/Ran-qiu/LLM" target="_blank" rel="noopener noreferrer">GitHub: Ran-qiu/LLM</a></li>
                         </ul>
                     </div>
                 </div>
             </section>
         </div>
     </div>
+
+    <nav class="toc-nav" aria-label="目录导航">
+        <div class="toc-title">目录</div>
+        <ul class="toc-list" id="tocList"></ul>
+    </nav>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="返回顶部">
@@ -579,6 +670,63 @@
                 }
             });
         });
+
+        // Table of Contents (Right Nav)
+        const tocList = document.getElementById('tocList');
+        if (tocList) {
+            const tocSections = Array.from(document.querySelectorAll('.main-content > section[id]'))
+                .map(section => {
+                    const titleEl = section.querySelector('h2');
+                    const title = titleEl ? (titleEl.textContent || '').trim() : section.id;
+                    return { id: section.id, title, el: section };
+                })
+                .filter(item => item.id && item.title);
+
+            tocList.innerHTML = tocSections
+                .map(item => `<li><a href="#${item.id}" data-toc-id="${item.id}">${item.title}</a></li>`)
+                .join('');
+
+            const tocLinks = Array.from(tocList.querySelectorAll('a[data-toc-id]'));
+            const setActiveToc = (id) => {
+                tocLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('data-toc-id') === id);
+                });
+            };
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    const visible = entries
+                        .filter(e => e.isIntersecting)
+                        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+                    if (visible) {
+                        setActiveToc(visible.target.id);
+                    }
+                }, { rootMargin: '-20% 0px -70% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] });
+
+                tocSections.forEach(item => observer.observe(item.el));
+            } else {
+                const onScroll = () => {
+                    const y = window.scrollY || window.pageYOffset;
+                    let activeId = tocSections[0]?.id;
+                    for (const item of tocSections) {
+                        const rect = item.el.getBoundingClientRect();
+                        const top = rect.top + y;
+                        if (y + 120 >= top) activeId = item.id;
+                    }
+                    if (activeId) setActiveToc(activeId);
+                };
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll();
+            }
+
+            const initialHash = (window.location.hash || '').slice(1);
+            if (initialHash && tocSections.some(s => s.id === initialHash)) {
+                setActiveToc(initialHash);
+            } else if (tocSections.length) {
+                setActiveToc(tocSections[0].id);
+            }
+        }
     </script>
 </body>
 </html>
